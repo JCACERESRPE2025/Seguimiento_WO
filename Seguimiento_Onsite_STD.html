@@ -5611,7 +5611,8 @@
     const waBtn = e.target.closest('.whatsapp-btn');
     if (waBtn){
       const woId = waBtn.dataset.wo;
-      const r = rowIndexById[woId];
+      //const r = rowIndexById[woId];
+      const r = rowIndexById[woId] ?? rowIndexByIdPremier[woId];
       const tel = normalizarTelefonoWhatsapp(r && r['Teléfono móvil (Contacto) (Contacto)']);
       if (!tel){
         alert('Este ticket no tiene un teléfono válido registrado.');
